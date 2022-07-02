@@ -1,0 +1,81 @@
+main {
+  background-color: white;
+  background-image: url("./src/kitatohoku.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 90vh;
+  width: 100vw;
+  margin-top: 10vh;
+  position: relative;
+}
+
+main .star {
+  color: orange;
+}
+
+main .aoyamastar {
+  position: absolute;
+  top: 500px;
+  left: 830px;
+  color: #F55219;
+}
+
+main .aomoristar {
+  position: absolute;
+  top: 240px;
+  left: 800px;
+}
+
+main .aomorinisistar {
+  position: absolute;
+  top: 230px;
+  left: 770px;
+}
+
+main .explain {
+  position: absolute;
+  height: 190px;
+  background-color: #FFF266;
+  border-radius: 20px;
+}
+
+main .explain ul {
+  float: left;
+  list-style: none;
+}
+
+main .explain ul h6 {
+  font-size: 16px;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+main .explain ul li {
+  margin-left: 20px;
+}
+
+main .explain img {
+  float: left;
+  height: 160px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 14px;
+  border-radius: 5px;
+}
+
+main .aomoriexplain {
+  top: 170px;
+  left: 850px;
+}
+
+main .aoyamaexplain {
+  top: 450px;
+  left: 215px;
+}
+
+main .nisiexplain {
+  top: 130px;
+  left: 195px;
+}
+/*# sourceMappingURL=shops.css.map */

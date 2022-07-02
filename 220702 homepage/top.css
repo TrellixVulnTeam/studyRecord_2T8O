@@ -1,0 +1,106 @@
+main {
+  margin-top: 10vh;
+}
+
+main .topmainimg {
+  width: 100vw;
+  height: 90vh;
+  background-image: url("./src/topmainimg1.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+main .searchandmenu {
+  width: 100vw;
+  height: 46vh;
+  background-color: black;
+  color: white;
+}
+
+main .searchandmenu div {
+  float: left;
+  margin-top: 5vh;
+  padding-top: 1vh;
+  padding-bottom: 3vh;
+  width: 25vw;
+  background-color: #323232;
+  border: solid white 2px;
+  padding-bottom: 1vh;
+}
+
+main .searchandmenu div h3 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+main .searchandmenu div h3 i {
+  margin-left: 20px;
+}
+
+main .searchandmenu div ul {
+  margin-bottom: 2vh;
+}
+
+main .searchandmenu div ul li {
+  list-style: none;
+}
+
+main .searchandmenu div ul li h5 {
+  font-size: 25px;
+  margin-left: 70px;
+}
+
+main .searchandmenu div ul li li p {
+  font-size: 22px;
+  margin-left: 100px;
+  margin-top: 5px;
+}
+
+main .searchandmenu .shops {
+  margin-left: 20vw;
+  margin-right: 5vw;
+}
+
+main .searchandmenu .menu {
+  margin-left: 5vw;
+}
+
+main .infomation {
+  width: 100vw;
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+main .infomation h3 {
+  text-align: center;
+  font-size: 30px;
+}
+
+main .infomation ul {
+  margin-left: 20vw;
+  list-style: none;
+}
+
+main .infomation ul li {
+  width: 60vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding: 30px;
+}
+
+main .infomation ul li .content {
+  font-size: 20px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+main .infomation ul .start {
+  border-bottom: none;
+}
+/*# sourceMappingURL=top.css.map */

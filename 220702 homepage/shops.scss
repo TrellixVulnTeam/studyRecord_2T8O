@@ -1,0 +1,69 @@
+main{
+    background-color: white;
+    background-image: url("./src/kitatohoku.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 90vh;
+    width: 100vw;
+    margin-top: 10vh;
+    position: relative;
+    .star{
+        color: orange;
+    }
+    .aoyamastar{
+        position: absolute;
+        top:500px;
+        left: 830px;
+        color: #F55219;
+    }
+    .aomoristar{
+        position: absolute;
+        top:240px;
+        left: 800px;
+    }
+    .aomorinisistar{
+        position: absolute;
+        top:230px;
+        left: 770px;
+    }
+    .explain{
+        position: absolute;
+        height: 190px;
+        background-color: #FFF266;
+        // border: 3px solid rgb(150,150,150);
+        border-radius: 20px;
+        ul{
+            float: left;
+            h6{
+                font-size: 16px;
+                margin-top: 13px;
+                margin-left: 10px;
+            }
+            list-style: none;
+            li{
+                margin-left: 20px;
+            }
+        }
+        img{
+            float: left;
+            height: 160px;
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 14px;
+            border-radius: 5px;
+        }
+    }
+    .aomoriexplain{
+        top: 170px;
+        left: 850px;
+    }
+    .aoyamaexplain{
+        top: 450px;
+        left: 215px;
+    }
+    .nisiexplain{
+        top: 130px;
+        left: 195px;
+    }
+}

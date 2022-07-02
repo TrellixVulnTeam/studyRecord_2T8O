@@ -1,0 +1,12 @@
+@charset "UTF-8";
+main {
+  margin-top: 10vh;
+  background-color: white;
+  background-image: url("/src/券売機.jpeg");
+  width: 100vw;
+  height: 90vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=menu.css.map */
