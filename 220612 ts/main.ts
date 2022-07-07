@@ -2,7 +2,7 @@ import * as fs from "fs";
 
 interface Data{
     name:string,
-    count:number,
+    count:number
 }
 
 function total(data:Data[]){
