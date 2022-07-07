@@ -1,0 +1,47 @@
+.Top{
+    .timeschedule{
+        padding: 2vw 2.5vw;
+        .day{
+            width: 19vw;
+            float: left;
+            div{
+                border: .5px solid black;
+                background-color: lemonchiffon;
+                height: 40px;
+                padding-top: 6px;
+                p{
+                    font-size: 10px;
+                    text-align: center;
+                }
+            }
+            .none{
+                background-color: aliceblue;
+            }
+        }
+    }
+    .time{
+        margin: 2vw 3vw;
+        padding-top: 152px;
+        tr{
+            th{
+                border: .5px solid black;
+                p{
+                    font-weight: lighter;
+                }
+            }
+            .num{
+                width: 30vw;
+            }
+            .term{
+                width: 64vw;
+            }
+        }
+    }
+    .calendars{
+        margin: 0 3vw;
+        img{
+            width: 94vw;
+        }
+    }
+    margin-bottom: 25vw;
+}
