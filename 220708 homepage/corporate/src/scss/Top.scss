@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Top{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    header{
+        position: relative;
+        h1{
+            span{
+                color: #0597F2;
+            }
+            font-size: 40px;
+            font-family: 'Eczar', serif;
+            position: fixed;
+            top: 20px;
+            right: 30px;
+        }
+        .hamburger{
+            background-color: rgba(255,255,255,.6);
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            padding-top: 2px;
+            padding-left: 4px;
+            position: absolute;
+            top: 28px;
+            left: 30px;
+            i{
+                color: gray;
+            }
+            .on{
+                display: none;
+                color: black;
+            }
+        }
+        ol{
+            position: absolute;
+            top: 110px;
+            left: 34px;
+            list-style: none;
+            li{
+                margin: 20px 0;
+                p{
+                    font-size: 20px;
+                    color: gray;
+                }
+            }
+        }
+    }
+    main{
+        .top{
+            img{
+                height: 20vh;
+                margin-top: 40vh;
+            }
+        }
+        .content{
+            display: none;
+            text-align: center;
+        }
+    }
+}
