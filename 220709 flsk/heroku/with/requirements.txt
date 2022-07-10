@@ -1,0 +1,42 @@
+# appdirs==1.4.4
+# beautifulsoup4==4.10.0
+# brotlipy==0.7.0
+# certifi==2021.5.30
+# cffi @ file:///Users/ktietz/Code/oss/ci_pkgs/cffi_1624487777258/work
+# chardet @ file:///Users/ktietz/demo/mc3/conda-bld/chardet_1628859434282/work
+click==8.0.1
+# conda==4.10.3
+# conda-package-handling @ file:///Users/ktietz/Code/oss/ci_pkgs/conda-package-handling_1626784934972/work
+# cryptography @ file:///Users/ktietz/Code/oss/ci_pkgs/cryptography_1624488650114/work
+# distlib @ file:///tmp/build/80754af9/distlib_1622544193819/work
+# et-xmlfile==1.1.0
+# filelock @ file:///home/linux1/recipes/ci/filelock_1610993975404/work
+Flask==2.0.1
+# future==0.18.2
+# icrawler==0.6.6
+# idna @ file:///home/linux1/recipes/ci/idna_1610986105248/work
+itsdangerous==2.0.1
+Jinja2==3.0.1
+# keras==2.6.0
+# line-bot-sdk==1.20.0
+# lxml==4.6.3
+MarkupSafe==2.0.1
+# mecab-python3==1.0.4
+# numpy==1.21.2
+# openpyxl==3.0.7
+# Pillow==8.3.2
+# pycosat==0.6.3
+# pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+# pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
+# PySocks @ file:///Users/ktietz/Code/oss/ci_pkgs/pysocks_1626781349491/work
+# requests @ file:///tmp/build/80754af9/requests_1608241421344/work
+# ruamel-yaml-conda @ file:///Users/ktietz/Code/oss/ci_pkgs/ruamel_yaml_1626786937887/work
+# selenium==3.141.0
+# six @ file:///tmp/build/80754af9/six_1623709665295/work
+# soupsieve==2.2.1
+# tqdm @ file:///tmp/build/80754af9/tqdm_1629302309755/work
+# unidic-lite==1.0.8
+# urllib3 @ file:///tmp/build/80754af9/urllib3_1625084269274/work
+# virtualenv @ file:///Users/ktietz/demo/mc3/conda-bld/virtualenv_1628940900221/work
+Werkzeug==2.0.1
+gunicorn==20.0.4

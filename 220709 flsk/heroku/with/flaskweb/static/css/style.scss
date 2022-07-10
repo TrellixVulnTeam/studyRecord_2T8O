@@ -1,0 +1,60 @@
+header{
+    .lowerRight{
+        position: fixed;
+        top: 40vh;
+        left: -10vw;
+        width:120vw;
+        height: 8vh;
+        background-image: linear-gradient(
+            to right top,
+            transparent 47%,
+            rgba(7,145,250,98) 47%,
+            rgba(7,145,250,98) 52%,
+            transparent 52%
+        );
+        z-index: 4;
+    }
+    .verticalLine{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 7vw;
+        height: 100vh;
+        border-right: solid 2vw rgba(7,145,250,98);
+    }
+    h1{
+        z-index: 2;
+        position: fixed;
+        font-size: 17vh;
+        width: 80vw;
+        top: 32vh;
+        left: 12vw;
+        font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+    }
+}
+main{
+    div{
+        position: fixed;
+        top: 12vh;
+        left: 13vw;
+        height: 70vh;
+        width: 82vw;
+        padding-top: 15vh ;
+        // background-color: rgba(255,255,255,0.7);
+        background-size: contain;
+        background-position: center center;
+        // display: none;
+        h1,h2,h3,h4,h5,p{
+            text-align: center;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    // .summerGoal{
+    //     padding-top: 10vh;
+    // }
+}
+footer{
+    height: 4000px;
+}

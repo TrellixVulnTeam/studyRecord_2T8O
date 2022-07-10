@@ -1,0 +1,54 @@
+@charset "UTF-8";
+header .lowerRight {
+  position: fixed;
+  top: 40vh;
+  left: -10vw;
+  width: 120vw;
+  height: 8vh;
+  background-image: -webkit-gradient(linear, left bottom, right top, color-stop(47%, transparent), color-stop(47%, #0791fa), color-stop(52%, #0791fa), color-stop(52%, transparent));
+  background-image: linear-gradient(to right top, transparent 47%, #0791fa 47%, #0791fa 52%, transparent 52%);
+  z-index: 4;
+}
+
+header .verticalLine {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7vw;
+  height: 100vh;
+  border-right: solid 2vw #0791fa;
+}
+
+header h1 {
+  z-index: 2;
+  position: fixed;
+  font-size: 17vh;
+  width: 80vw;
+  top: 32vh;
+  left: 12vw;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+}
+
+main div {
+  position: fixed;
+  top: 12vh;
+  left: 13vw;
+  height: 70vh;
+  width: 82vw;
+  padding-top: 15vh;
+  background-size: contain;
+  background-position: center center;
+}
+
+main div h1, main div h2, main div h3, main div h4, main div h5, main div p {
+  text-align: center;
+}
+
+main div p {
+  margin: 0;
+}
+
+footer {
+  height: 4000px;
+}
+/*# sourceMappingURL=style.css.map */
