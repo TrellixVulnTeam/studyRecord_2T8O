@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    display:flex;
+    flex-wrap:wrap;
+    list-style:none;
+    margin:0;
+    padding:0;
+    height: 600px;
+    width: 600px;
+    background-color: black;
+}
+li{
+    width:148px;
+    height:148px;
+    margin: 1px;
+    line-height:25px;
+    background-color:green;
+    text-align:center;
+    div{
+        margin: 2%;
+        height: 96%;
+        width: 96%;
+        border-radius: 50%;
+    }
+    .black{
+        background-color: black;
+    }
+    .white{
+        background-color: white;
+    }
+}
