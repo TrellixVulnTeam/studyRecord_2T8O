@@ -1,6 +1,9 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './Articles.css';
-import axios from "axios";
+import { useCollection } from "react-firebase-hooks/firestore";
+import axios ,{ AxiosRequestConfig, AxiosResponse, AxiosError }from "axios";
+import {collection,getDocs,getFirestore} from "firebase/firestore"
+import app from "./config"
 
 const url = "https://testfastapiw.herokuapp.com";
 interface Data{
@@ -9,33 +12,32 @@ interface Data{
 }
 function Articles() {
     const [comment, setComment] = useState("");
-    const [state,setState]=useState([]);
-    axios.get(url).then((res)=>{setState(res.data)})
-    const listItems=state.map((data:Data)=>
-        <p>{data.time}:{data.comment}</p>
-    )
-  // async function post(comment:string){
-  //   const response=await fetch(`${url}`,{
-  //     method:"POST",
-  //     headers: {'Content-Type': 'application/json'},
-  //     body:JSON.stringify({"comment":comment})
-  //   })
-  //   setComment("")
-  //   return response.json()
-  // }
-    const push=(comment:string)=>{
-        console.log(comment)
+    // const [state,setState]=useState([]);
+    async function put(comment:string){
+        const response=await fetch(`${url}`,{
+        method:"POST",
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({"comment":comment})
+        })
         setComment("")
+        return response.json()
     }
+    const [posts, setPosts] = useState([]);
+    const db=getFirestore(app)
     return (
         <div className="App">
         <header className="App-header">
             <form>
             <input type="text" value={comment} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setComment(e.target.value)} id="comment"/>
-            {/* <input type="button" onClick={()=>post(comment).catch((e)=>{console.log(e.message)}).then((data)=>{console.log(data)})} value="push"/> */}
-            <input type="button" onClick={()=>{push(comment)}} value="push"/>
+            <input type="button" onClick={()=>put(comment).catch((e)=>{console.log(e.message)}).then((data)=>{console.log(data)})} value="push"/>
             </form>
-            <div>{listItems}</div>
+            <div>
+                {
+                    posts.map((post:Data)=>(
+                        <p>{post.time}:{post.comment}</p>
+                    ))
+                }
+            </div>
         </header>
         </div>
     );

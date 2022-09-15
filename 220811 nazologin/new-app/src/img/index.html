@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://online-mp.viscuit.com/v1113/index.html#/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="vtest">
+  <link rel="apple-touch-icon" href="https://online-mp.viscuit.com/v1113/icons/Icon-192.png">
+
+
+  <meta name="google-signin-client_id" content="586512614224-digor8lcfejfe27ej9ronhsl7fug8b5n.apps.googleusercontent.com">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="https://online-mp.viscuit.com/v1113/favicon.png">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="./index_files/cb=gapi.loaded_0" async=""></script><script src="./index_files/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="./index_files/firebase-app(1).js"></script>
+  <script src="./index_files/firebase-analytics.js"></script>
+  <script src="./index_files/firebase-firestore.js"></script>
+  <script src="./index_files/firebase-auth.js"></script>
+
+  <script src="./index_files/deflate.min.js"></script>
+  <script src="./index_files/inflate.min.js"></script>
+  <script src="./index_files/screenfull.min.js"></script>
+
+
+  <title></title>
+  <link rel="manifest" href="https://online-mp.viscuit.com/v1113/manifest.json">
+<script src="./index_files/js" async=""></script><script async="" defer="" src="./index_files/platform.js" gapi_processed="true"></script><style></style><meta flt-viewport="" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta id="flutterweb-theme" name="theme-color" content="#2196f3"></head>
+<body spellcheck="false" style="position: fixed; inset: 0px; overflow: hidden; padding: 0px; margin: 0px; user-select: none; touch-action: none; font: 14px sans-serif; color: red;" class="vsc-initialized">
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+
+       <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyC782Szs7XlWvspd2NJ9fa6Z2FAh9l9HvU",
+          authDomain: "viscuit-online.firebaseapp.com",
+          databaseURL: "https://viscuit-online.firebaseio.com",
+          projectId: "viscuit-online",
+          storageBucket: "viscuit-online.appspot.com",
+          messagingSenderId: "586512614224",
+          appId: "1:586512614224:web:4d01c3a008e367c273a255",
+          measurementId: "G-1PV8PTXG20"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+//        appClientId = "com.googleusercontent.apps.586512614224-0njc8ipeg39nk8p077a46gfqeso9v0io";
+
+      </script>
+
+  <script>
+
+var VIS = {
+  compressb64: function (dat) {
+            var defl = new Zlib.Deflate(dat);
+            var pp = defl.compress();
+            var s = "";
+//            s += String.fromCharCode(120);
+//            s += String.fromCharCode(218);
+            var i;
+            for (i = 0; i < pp.length; i++) {
+                s += String.fromCharCode(pp[i]);
+            }
+            return btoa(s);
+        },
+  uncompressb64: function (b64) {
+            var by = atob(b64);
+
+            var len = by.length;
+            var bz = new Uint8Array(len);
+//            console.log(by.charCodeAt(0), by.charCodeAt(1));
+            for (i = 0; i < len; i++) {
+                bz[i] = by.charCodeAt(i);
+            }
+            //            var len = by.length;
+//            var bz = new Uint8Array(len - 2);
+//            console.log(by.charCodeAt(0), by.charCodeAt(1));
+//            for (i = 2; i < len; i++) {
+//                bz[i - 2] = by.charCodeAt(i);
+//            }
+            var infl = new Zlib.Inflate(bz);
+            var px = infl.decompress();
+            return px;
+        },
+
+
+  compressb64x: function (dat) {
+            var defl = new Zlib.RawDeflate(dat, {compressionType: Zlib.RawDeflate.CompressionType.FIXED});
+            var pp = defl.compress();
+            var s = "";
+            s += String.fromCharCode(120);
+            s += String.fromCharCode(218);
+            var i;
+            for (i = 0; i < pp.length; i++) {
+                s += String.fromCharCode(pp[i]);
+            }
+            return btoa(s);
+        },
+  uncompressb64x: function (b64) {
+            var by = atob(b64);
+            var len = by.length;
+            var bz = new Uint8Array(len - 2);
+            for (i = 2; i < len; i++) {
+                bz[i - 2] = by.charCodeAt(i);
+            }
+            var infl = new Zlib.RawInflate(bz);
+            var px = infl.decompress();
+            return px;
+        },
+
+  urlhref: function () {
+    return location.href;
+  },
+
+  fullscreen: function () {
+    if (screenfull.isEnabled) {
+      screenfull.request();
+    }
+  },
+
+  playSound: function (f, d) {
+    _playSound(f,d);
+  }
+};
+
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const audioContext = new AudioContext();
+
+function _playSound(freq, dur) {
+  var o = audioContext.createOscillator();
+
+  var eg = audioContext.createGain();
+
+  o.connect(eg);
+  eg.connect(audioContext.destination);
+
+  var t0 = audioContext.currentTime;
+
+  o.frequency.value = freq;
+
+  o.start(t0);
+
+  eg.gain.setValueAtTime(0.1, t0);
+  eg.gain.setTargetAtTime(0, t0 + 0.1, 0.02);
+//eg.gain.setValueAtTime(0, t0+0.1);
+//  eg.gain.linearRampToValueAtTime(0.2, t0 + 0.1);
+//  eg.gain.setTargetAtTime(0, t0 + 0.1, t0 + 0.5);
+  //                eg.gain.setTargetAtTime(0, t0 + 1, t0 + 2);
+  setTimeout(function () {
+      o.stop();
+      eg.disconnect();
+      o.disconnect();
+  }, 500);
+}
+
+  </script>
+
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=596016319');
+      });
+    }
+  </script>
+  <script src="./index_files/main.dart.js" type="application/javascript"></script><flt-glass-pane style="position: absolute; inset: 0px; cursor: default;"><flt-semantics-placeholder role="button" aria-live="true" tabindex="0" aria-label="Enable accessibility" style="position: absolute; left: -1px; top: -1px; width: 1px; height: 1px;"></flt-semantics-placeholder><flt-scene-host aria-hidden="true" style="pointer-events: none;"><flt-scene style="position: absolute;"><flt-transform style="position: absolute; transform-origin: 0px 0px 0px; transform: none;"><flt-offset style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(0px, 0px);"><flt-picture style="position: absolute; transform: translate(0px, 0px);"></flt-picture><flt-offset style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(0px, 0px);"><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-canvas style="position: absolute; transform: translate(-1px, -1px);"><canvas width="2862" height="1840" style="position: absolute; width: 1431px; height: 920px; z-index: -1;"></canvas></flt-canvas></flt-picture><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-canvas style="position: absolute; transform: translate(-1px, 445px);"><canvas width="2770" height="1108" style="position: absolute; width: 1385px; height: 554px; z-index: -1;"></canvas><img src="blob:https://online-mp.viscuit.com/5deb5bf2-db54-4e20-ab65-f24d01291200" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 233.208, 174.281);"><p style="font-size: 18px; font-weight: 900; font-family: monospace; color: rgb(119, 119, 119); text-decoration: double rgb(255, 255, 0); position: absolute; white-space: pre-wrap; overflow-wrap: break-word; overflow: hidden; height: 25.5px; width: 34px; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 1.5625); left: 0px; top: 0px;">p. 1</p></flt-canvas></flt-picture><flt-offset style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(595.417px, 0px);"><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-dom-canvas style="position: absolute; inset: 0px;"><draw-rect style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(0px, 0px); width: 595.417px; height: 854px; background-color: rgb(170, 170, 170);"></draw-rect></flt-dom-canvas></flt-picture></flt-offset><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-canvas style="position: absolute; transform: translate(-1px, -1px);"><img src="blob:https://online-mp.viscuit.com/19d393bd-03a0-47e6-98b5-2bee5a96ac5a" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1191.83, 1); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"><img src="blob:https://online-mp.viscuit.com/e5eed9de-b233-4e87-bd67-b8bf82ba3510" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1191.83, 141.667); left: 0px; top: 0px; width: 119.08px; height: 52.1px;"></flt-canvas></flt-picture><flt-offset style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(1190.83px, 214.35px);"><flt-opacity style="position: absolute; transform-origin: 0px 0px 0px; opacity: 0.6; transform: translate(0px, 0px);"><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-canvas style="position: absolute; transform: translate(28px, 16px);"><img src="blob:https://online-mp.viscuit.com/f34ceada-3470-449e-8e1f-62362a391bfa" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1.77083, 1.8625); left: 0px; top: 0px; width: 59.54px; height: 59.54px;"></flt-canvas></flt-picture></flt-opacity><flt-opacity style="position: absolute; transform-origin: 0px 0px 0px; opacity: 0.6; transform: translate(0px, 95.2667px);"><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-canvas style="position: absolute; transform: translate(28px, 16px);"><img src="blob:https://online-mp.viscuit.com/f3005e99-8a58-4cd1-a578-bc016384910f" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1.77083, 1.8625); left: 0px; top: 0px; width: 59.54px; height: 59.54px;"></flt-canvas></flt-picture></flt-opacity></flt-offset><flt-offset style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(1309.92px, 0px);"><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-canvas style="position: absolute; transform: translate(-1px, -1px);"><img src="blob:https://online-mp.viscuit.com/0a6af557-b315-4164-b46d-c637c7751a88" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 1); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"><img src="blob:https://online-mp.viscuit.com/746520bd-e693-4ad8-a07c-e3cdea5b728b" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 120.083); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"><img src="blob:https://online-mp.viscuit.com/734cd6ea-7c5f-478a-97eb-8fa3509739e8" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 239.167); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"><img src="blob:https://online-mp.viscuit.com/8b3a3321-cdfe-4cec-9f6e-b22d8f3ed2b2" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 358.25); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"><img src="blob:https://online-mp.viscuit.com/e17be57e-310d-456c-b761-c355767c1a7b" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 477.333); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"><img src="blob:https://online-mp.viscuit.com/06003185-f19f-4dee-83de-f0fb6cdd302a" decoding="async" style="position: absolute; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 1, 596.417); left: 0px; top: 0px; width: 119.08px; height: 119.08px;"></flt-canvas></flt-picture></flt-offset><flt-picture style="position: absolute; transform: translate(0px, 0px);"><flt-dom-canvas style="position: absolute; inset: 0px;"><draw-rect style="position: absolute; transform-origin: 0px 0px 0px; transform: translate(0px, 0px); width: 1429px; height: 854px; background-color: rgba(255, 255, 255, 0.01);"></draw-rect></flt-dom-canvas></flt-picture></flt-offset></flt-offset></flt-transform></flt-scene></flt-scene-host></flt-glass-pane><flt-ruler-host style="position: fixed; visibility: hidden; overflow: hidden; top: 0px; left: 0px; width: 0px; height: 0px;"><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: sans-serif; white-space: pre;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: sans-serif; flex: 0 1 0%; display: inline; white-space: pre-line;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: sans-serif; display: block; overflow-wrap: break-word;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: sans-serif; white-space: pre;"> </p><div></div></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 500; white-space: pre;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 500; flex: 0 1 0%; display: inline; white-space: pre-line;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 500; display: block; overflow-wrap: break-word;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 14px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 500; white-space: pre;"> </p><div></div></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 50px; font-family: MaterialIcons, -apple-system, BlinkMacSystemFont, sans-serif; white-space: pre;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 50px; font-family: MaterialIcons, -apple-system, BlinkMacSystemFont, sans-serif; flex: 0 1 0%; display: inline; white-space: pre-line;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 50px; font-family: MaterialIcons, -apple-system, BlinkMacSystemFont, sans-serif; display: block; overflow-wrap: break-word;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 50px; font-family: MaterialIcons, -apple-system, BlinkMacSystemFont, sans-serif; white-space: pre;"> </p><div></div></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="text-align: center; font-size: 10px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 300; line-height: 1.1; white-space: pre;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; margin: 0px; border: 0px; padding: 0px;"><p style="text-align: center; font-size: 10px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 300; line-height: 1.1; flex: 0 1 0%; display: inline; white-space: pre-line;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="text-align: center; font-size: 10px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 300; line-height: 1.1; display: block; overflow-wrap: break-word;"></p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="text-align: center; font-size: 10px; font-family: -apple-system, BlinkMacSystemFont; font-weight: 300; line-height: 1.1; white-space: pre;"> </p><div></div></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 18px; font-family: monospace; font-weight: 900; text-decoration: double; white-space: pre;">p. 1</p><div></div></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 18px; font-family: monospace; font-weight: 900; text-decoration: double; flex: 0 1 0%; display: inline; white-space: pre-line;">p. 1</p></div><div style="visibility: hidden; position: absolute; top: 0px; left: 0px; display: flex; flex-direction: row; align-items: baseline; margin: 0px; border: 0px; padding: 0px;"><p style="font-size: 18px; font-family: monospace; font-weight: 900; text-decoration: double; display: block; overflow-wrap: break-word; white-space: pre-wrap; width: 34.5px;">p. 1</p></div></flt-ruler-host>
+
+
+</body></html>
