@@ -1,0 +1,8 @@
+$ python3 my_queue2.py 
+head =  6 , tail =  9
+初期値:  [ 6 2 3 7 9 ]
+取り出した要素: 6 2
+head =  3 , tail =  9
+キューの状態:  [ 3 7 9 ]
+head =  3 , tail =  8
+キューの状態:  [ 3 7 9 5 8 ]

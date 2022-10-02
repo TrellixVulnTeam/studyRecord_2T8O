@@ -1,0 +1,3 @@
+macbook:~ sakai$ cd Documents/ohm/ch2
+macbook:ch2 sakai$ python3 helloworld.py 
+Hello world.

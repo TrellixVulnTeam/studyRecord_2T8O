@@ -1,0 +1,12 @@
+$ python3 my_hash.py 
+ハッシュ表の状態:
+tbl[2] -> (12, Bob)
+tbl[3] -> (3, Alice) -> (233, Chris) -> (183, Eav)
+tbl[5] -> (95, David) -> (25, George)
+
+取得した要素 (233, Chris)
+削除後のハッシュ表の状態:
+tbl[2] -> (12, Bob)
+tbl[3] -> (3, Alice) -> (183, Eav)
+tbl[5] -> (95, David) -> (25, George)
+

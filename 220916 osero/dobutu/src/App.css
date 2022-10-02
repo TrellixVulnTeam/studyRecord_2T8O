@@ -1,0 +1,9 @@
+.row{
+    height: 10vw;
+}
+.rot{
+    transform: rotate(180deg);
+}
+.notrow{
+    height: 2vw;
+}

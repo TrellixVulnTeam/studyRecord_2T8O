@@ -1,0 +1,2 @@
+$ python bm_search.py 
+インデックス: 7

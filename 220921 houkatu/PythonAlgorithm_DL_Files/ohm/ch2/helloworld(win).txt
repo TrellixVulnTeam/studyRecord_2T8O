@@ -1,0 +1,6 @@
+C:\Users\root>cd Documents/ohm/ch2
+
+C:\Users\root\Documents\ohm\ch2>python helloworld.py
+Hello world.
+
+C:\Users\root\Documents\ohm\ch2>
